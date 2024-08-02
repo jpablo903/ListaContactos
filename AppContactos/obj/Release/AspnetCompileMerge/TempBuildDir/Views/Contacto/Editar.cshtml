@@ -1,0 +1,43 @@
+﻿@model AppContactos.Models.Contacto
+
+@{
+    ViewBag.Title = "Editar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="row" style="margin-top:30px;">
+    <div class="col-sm-12">
+
+        <div class="panel panel-success">
+            <div class="panel-heading">
+                <h4>Editar Contacto</h4>
+            </div>
+            <div class="panel-body">
+                <form action="@Url.Action("Editar","Contacto")" method="post">
+                    <input type="hidden" class="form-control" name="IdContacto" value="@Html.DisplayTextFor(m => m.IdContacto)" />
+                    <div class="form-group">
+                        <label>Nombres</label>
+                        <input type="text" class="form-control" name="Nombre" value="@Html.DisplayTextFor(m => m.Nombre)" />
+                    </div>
+                    <div class="form-group">
+                        <label>Apellidos</label>
+                        <input type="text" class="form-control" name="Apellido" value="@Html.DisplayTextFor(m => m.Apellido)" />
+                    </div>
+                    <div class="form-group">
+                        <label>Telefono</label>
+                        <input type="text" class="form-control" name="Telefono" value="@Html.DisplayTextFor(m => m.Telefono)" />
+                    </div>
+                    <div class="form-group">
+                        <label>Correo</label>
+                        <input type="text" class="form-control" name="Correo" value="@Html.DisplayTextFor(m => m.Correo)" />
+                    </div>
+                    <button type="submit" class="btn btn-primary">Guardar</button>
+                    <a class="btn btn-secondary" href="@Url.Action("Inicio", "Contacto")">Volver</a>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>
+
